@@ -35,7 +35,6 @@ RT-RJ(config-if)# no shutdown
 2. Network Layer (Incorrect IPv4 Addressing)
 Issue: The HTTP server hosting the website was configured with an incorrect IP address (200.200.200.222 instead of .202) and a faulty Default Gateway (200.200.200.211 instead of .201), effectively isolating the server from its designated subnet.
 Diagnosis & Resolution: Updated the static IPv4 parameters on the server's network configuration panel to match the correct subnet topology.
-![HTTP Server Configuration](servidor-config.jpg)
 
 3. Application Layer (DNS Service Failures)
 Issue: The DNS server was completely powered off, preventing any domain name resolution for counterstrike.com. Additionally, the domain name entry mapping contained configuration errors.
@@ -68,6 +67,7 @@ Below is the verification showing a client PC successfully browsing counterstrik
 
 The Security Perspective (The CIA Triad)
 In Information Security, we frequently focus on access controls and cryptography (Confidentiality and Integrity). However, this exercise highlights the vital importance of Availability—one of the core pillars of the CIA Triad.
+
 A misconfigured network infrastructure can easily mimic a denial-of-service (DoS) condition, drain technical support resources, and create operational blind spots. Mastering infrastructure fundamentals is a prerequisite for effectively securing any corporate environment.
 
 Tools & Technologies Used
