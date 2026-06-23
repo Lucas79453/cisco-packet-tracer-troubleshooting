@@ -22,7 +22,7 @@ I applied a structured troubleshooting approach aligned with the OSI model layer
 * **Issue:** The interface on the edge router (`RT-RJ`) was administratively down (`shutdown` status), blocking all traffic to the external network.
 * **Diagnosis & Resolution:** Verified the interface status via Cisco IOS CLI and enabled it.
 
-```cisco
+  cisco
 # Checking interface status (Before):
 RT-RJ# show interfaces GigabitEthernet0/0
 GigabitEthernet0/0 is administratively down, line protocol is down
@@ -30,13 +30,14 @@ GigabitEthernet0/0 is administratively down, line protocol is down
 # Corrective commands:
 RT-RJ# configure terminal
 RT-RJ(config)# interface GigabitEthernet0/0
-RT-RJ(config-if)# no shutdown
+RT-RJ(config-if)# no shutdown 
 
 2. Network Layer (Incorrect IPv4 Addressing)
 Issue: The HTTP server hosting the website was configured with an incorrect IP address (200.200.200.222 instead of .202) and a faulty Default Gateway (200.200.200.211 instead of .201), effectively isolating the server from its designated subnet.
 Diagnosis & Resolution: Updated the static IPv4 parameters on the server's network configuration panel to match the correct subnet topology.
+![HTTP Server Configuration](servidor-config.jpg)
 
-3. Application Layer (DNS Service Failures)
+4. Application Layer (DNS Service Failures)
 Issue: The DNS server was completely powered off, preventing any domain name resolution for counterstrike.com. Additionally, the domain name entry mapping contained configuration errors.
 Diagnosis & Resolution: Turned on the DNS service device within Packet Tracer and corrected the DNS A-Record mapping to point to the valid server IP.
 
@@ -48,7 +49,7 @@ Diagnosis & Resolution: Turned on the DNS service device within Packet Tracer an
   * Type: A Record
   * Address: 200.200.200.202 (Corrected from misconfigured IP)
 
-4. Service & VLAN Inconsistencies
+ 4. Service & VLAN Inconsistencies
 Issue: The HTTP server was restricted to HTTPS connections exclusively, blocking standard HTTP requests. Furthermore, improper VLAN segmentation on the local switches (SW-1 and SW-2) prevented proper traffic forwarding.
 Diagnosis & Resolution: Adjusted the web service configurations to accept the required traffic and corrected the switchport access and trunking configurations to restore inter-VLAN routing integrity.
 
@@ -56,7 +57,7 @@ Diagnosis & Resolution: Adjusted the web service configurations to accept the re
 SW-1# configure terminal
 SW-1(config)# interface range FastEthernet0/1 - 10
 SW-1(config-if-range)# switchport mode access
-SW-1(config-if-range)# switchport access vlan 10
+SW-1(config-if-range)# switchport access vlan 10 
 
 Incident Symptom (The Error)
 Before applying the fixes, attempts to reach the domain resulted in a failure, simulating a complete disruption of service for the clients.
