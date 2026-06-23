@@ -22,7 +22,7 @@ I applied a structured troubleshooting approach aligned with the OSI model layer
 * **Issue:** The interface on the edge router (`RT-RJ`) was administratively down (`shutdown` status), blocking all traffic to the external network.
 * **Diagnosis & Resolution:** Verified the interface status via Cisco IOS CLI and enabled it.
 
-  cisco
+ ```cisco
 # Checking interface status (Before):
 RT-RJ# show interfaces GigabitEthernet0/0
 GigabitEthernet0/0 is administratively down, line protocol is down
