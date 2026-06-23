@@ -10,8 +10,7 @@ Using the network topology, I conducted a systematic investigation across multip
 ---
 
 ## Network Topology
-![Network Topology](assets/topologia.jpg)
-
+![Network Topology](topologia.jpg)
 ---
 
 ## Identified Issues & Troubleshooting Methodology
