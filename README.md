@@ -35,6 +35,7 @@ RT-RJ(config-if)# no shutdown
 2. Network Layer (Incorrect IPv4 Addressing)
 Issue: The HTTP server hosting the website was configured with an incorrect IP address (200.200.200.222 instead of .202) and a faulty Default Gateway (200.200.200.211 instead of .201), effectively isolating the server from its designated subnet.
 Diagnosis & Resolution: Updated the static IPv4 parameters on the server's network configuration panel to match the correct subnet topology.
+![HTTP Server Configuration](servidor-config.jpg)
 
 3. Application Layer (DNS Service Failures)
 Issue: The DNS server was completely powered off, preventing any domain name resolution for counterstrike.com. Additionally, the domain name entry mapping contained configuration errors.
