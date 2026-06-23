@@ -26,11 +26,11 @@ I applied a structured troubleshooting approach aligned with the OSI model layer
 # Checking interface status (Before):
 RT-RJ# show interfaces GigabitEthernet0/0
 GigabitEthernet0/0 is administratively down, line protocol is down
-
 # Corrective commands:
 RT-RJ# configure terminal
 RT-RJ(config)# interface GigabitEthernet0/0
 RT-RJ(config-if)# no shutdown 
+
 
 2. Network Layer (Incorrect IPv4 Addressing)
 Issue: The HTTP server hosting the website was configured with an incorrect IP address (200.200.200.222 instead of .202) and a faulty Default Gateway (200.200.200.211 instead of .201), effectively isolating the server from its designated subnet.
